@@ -1,0 +1,616 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", sans-serif;
+}
+
+body{
+  background-color: #F4EEFF;
+  color: #424874;
+  display: flex;
+  flex-direction: column;
+}
+
+body .hidden {
+  display: none;
+}
+
+/*Main Section*/
+#main-section{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  position: relative;
+  height: 801px;
+  justify-content: start;
+}
+
+#navigation{
+  padding: 0 100px;
+}
+
+/*Profile Card*/
+.profile-card {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  background-color: #e5d3ff;
+  margin-bottom: 170px;
+}
+
+.footer{
+  z-index: 2;
+}
+
+.profile-card h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #424874;
+  text-align: center;
+}
+
+.profile-picture {
+  border: 5px #424874 solid;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  margin: 0 auto;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-info span {
+  cursor: pointer;
+  width: 70%;
+  transition: transform 0.3s ease;
+  padding: 10px;
+  margin: 5px;
+}
+
+.profile-info span:hover {
+  transform: scale(1.05);
+  border-radius: 10px;
+  background: #ddd;
+}
+
+.profile-info span.active {
+  font-weight: bold;
+  transform: scale(1.05);
+  border-bottom: #383d63 solid 2px;
+}
+
+.profile-info  img {
+  width: 1.5rem;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 5px ;
+}
+
+/*Welcome Message*/
+.welcome-message {
+  grid-column: 5 / 11;
+  width: 100%;
+  background-color: #f6f0fc;
+  border: #424874 solid 2px;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.welcome-message h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.welcome-message ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.welcome-message ul li {
+  margin-bottom: 10px;
+}
+
+/*Personal Info*/
+.personal-info {
+  grid-column: 5 / 12;
+  width: 100%;
+  padding: 16px;
+}
+
+.personal-info h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f0fc;
+  border: 2px solid #424874;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  margin: 10px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 15px;
+  max-width: 100%;
+}
+
+.form-group label {
+  display: block;
+  color: #424874;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #424874;
+  border-radius: 4px;
+  background-color: white;
+  color: #424874;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #424874;
+  box-shadow: 0 0 0 2px rgba(66, 72, 116, 0.2);
+}
+
+.update-btn {
+  background-color: #424874;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  transition: transform 0.3s ease;
+  margin-top: 10px;
+}
+
+.update-btn:hover {
+  transform: scale(1.02);
+  background-color: #383d63;
+}
+
+/*Appointments*/
+.completed-appointments, .appointments {
+  grid-column: 5 / 12;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.appointment-schedule {
+  margin: 10px;
+  border: 2px solid #424874;
+  border-radius: 8px;
+  background-color: #e5d3ff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.completed-appointments .appointment-schedule {
+  background-color: #e8e8e8;
+  border-color: #666;
+}
+
+.appointment-schedule .date,
+.appointment-schedule .time {
+  text-align: center;
+  font-weight: bold;
+  color: #424874;
+  margin-bottom: 5px;
+}
+
+.completed-appointments .appointment-schedule .date,
+.completed-appointments .appointment-schedule .time {
+  color: #666;
+}
+
+.appointment-schedule .name {
+  text-align: right;
+  color: #424874;
+}
+
+.completed-appointments .appointment-schedule .name {
+  color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  gap: 15px;
+}
+
+.pagination button {
+  background-color: #424874;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  transform: scale(1.05);
+  background-color: #383d63;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.page-info {
+  color: #424874;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#appointments-section-search-bar,#completed-appointments-section-search-bar{
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 250px;
+  background-color: #e3e3e3;
+  color: #1a1a1a;
+}
+#appointments-section-search-bar::placeholder,
+#completed-appointments-section-search-bar::placeholder{
+  color: #1a1a1a;
+}
+
+#appointments-section-search-btn,
+#completed-appointments-section-search-btn,
+#appointments-section-reset-btn,
+#completed-appointments-section-reset-btn{
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#appointments-section-search-btn,
+#completed-appointments-section-search-btn{
+  background-color: #41a201;
+}
+
+#appointments-section-reset-btn,
+#completed-appointments-section-reset-btn {
+  background-color: #ff2d2d;
+  margin-right: 10px;
+}
+
+#appointments-section-search-btn:hover,
+#completed-appointments-section-search-btn:hover{
+  transform: scale(1.05);
+  background-color: #1e6902;
+}
+
+#appointments-section-reset-btn:hover,
+#completed-appointments-section-reset-btn:hover {
+  transform: scale(1.05);
+  background-color: #860101;
+}
+
+/*Schedule*/
+.schedule{
+  grid-column: 6 / 10;
+  min-width: 400px;
+}
+
+/*Newsletter*/
+/*Password*/
+.newsletter,
+.change-password{
+  grid-column: 6 / 10;
+  width: 100%;
+  padding: 16px;
+}
+
+/*Payments*/
+/*Admin Dashboard*/
+.patients,
+.payments,
+.dashboard,
+.booking,
+.reviews {
+  grid-column: 5 / 12;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  overflow: auto;
+}
+
+.data-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table.dataTable tbody td,
+table.dataTable thead th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  background-image: none !important;
+}
+
+#usersTable_filter,
+#reviewsTable_filter,
+#bookingTable_filter{
+  margin-bottom: 10px;
+}
+
+table.dataTable thead th {
+  position: relative;
+  background-color: #a6b1e1;
+  border-bottom: 2px solid #424874;
+  color: #424874;
+  font-weight: bold;
+  padding: 15px 25px 15px 10px;
+}
+
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+table.dataTable thead th.sorting:after {
+  content: "↕";
+  opacity: 0.2;
+}
+
+table.dataTable thead th.sorting_asc:after {
+  content: "↑";
+  opacity: 1;
+}
+
+table.dataTable thead th.sorting_desc:after {
+  content: "↓";
+  opacity: 1;
+}
+
+
+table.dataTable thead th:last-child:after {
+  display: none;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #f4eeff;
+}
+
+table.dataTable tbody td {
+  padding: 12px 10px;
+  color: #424874;
+}
+
+.dataTables_wrapper {
+  padding: 20px 0;
+  font-family: 'Roboto', sans-serif;
+  color: #424874;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+  border: 2px solid #a6b1e1;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #424874;
+}
+
+.dataTables_length select:focus,
+.dataTables_filter input:focus {
+  outline: none;
+  border-color: #424874;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-active {
+  background-color: #a6b1e1;
+  color: white;
+}
+
+.status-inactive {
+  background-color: #424874;
+  color: white;
+}
+
+.action-btn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.edit-btn, .edit-btn-review {
+  background-color: #2196F3;
+  color: white;
+}
+.edit-btn:hover
+.edit-btn-review:hover {
+  background-color: #1976D2;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-btn,
+.delete-booking-btn,
+.delete-btn-review {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover,
+.delete-booking-btn:hover,
+.delete-btn-review:hover {
+  background-color: #d32f2f;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-btn{
+  background-color: #4CAF50;
+  color: white;
+}
+.add-btn:hover{
+  background-color: #45a049;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dataTables_paginate .paginate_button {
+  padding: 8px 15px;
+  margin: 0 5px;
+  border: 1px solid #a6b1e1;
+  border-radius: 5px;
+  color: #424874 !important;
+}
+
+.dataTables_paginate .paginate_button.current {
+  background-color: #a6b1e1 !important;
+  border-color: #a6b1e1 !important;
+  color: white !important;
+}
+
+.dataTables_paginate .paginate_button:hover {
+  background-color: #f4eeff !important;
+  border-color: #424874 !important;
+  color: #424874 !important;
+}
+
+.error-message{
+  color: red;
+}
+
+/*Media Queries*/
+
+@media (max-width: 1300px) {
+  .profile-card {
+    grid-column: span 4;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #main-section {
+    grid-template-columns: repeat(6 , 1fr);
+    place-content: center;
+  }
+
+  .profile-card{
+    grid-column: span 6;
+  }
+
+  .appointments,
+  .personal-info,
+  .schedule,
+  .welcome-message,
+  .completed-appointments,
+  .patients,
+  .dashboard,
+  .change-password{
+    grid-column: 2 / 6 ;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .profile-card {
+    padding: 8px;
+  }
+
+  .appointments .appointment-schedule {
+    padding: 8px;
+  }
+}

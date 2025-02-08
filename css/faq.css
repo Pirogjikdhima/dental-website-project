@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", sans-serif;
+  color: #424874;
+}
+
+body {
+  background: #f4eeff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+hr {
+  height: 5px;
+  background-color: #424874;
+  border: none;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  gap: 2rem;
+}
+
+.faq-container {
+  width: 95%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4a3b7c;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e3daf5;
+  padding-bottom: 1rem;
+}
+
+#navigation {
+  background-color: #f4eeff;
+  padding: 0 200px;
+}
+
+details {
+  background: #f6f0fc;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+details:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+summary {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #4a3b7c;
+  cursor: pointer;
+}
+
+details[open] {
+  background: #e3daf5;
+}
+
+details summary::marker {
+  font-size: 1.4rem;
+  color: #6e58a8;
+}
+
+p {
+  margin-top: 1rem;
+  line-height: 1.8;
+  color: #4a3b7c;
+}
+
+.video-section {
+  width: 95%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4a3b7c;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e3daf5;
+  padding-bottom: 1rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-grid iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-grid iframe:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .faq-container, .video-section {
+    padding: 2rem;
+  }
+
+  .faq-title, .video-title {
+    font-size: 2rem;
+  }
+}

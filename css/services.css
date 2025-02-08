@@ -1,0 +1,239 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F4EEFF;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  color: #424874;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#navigation {
+  padding: 0 200px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3.75em 1.25em;
+  background-color: #F4EEFF;
+  border-bottom: 0.125em solid #DDD6F3;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75em;
+  margin: 0 auto;
+  gap: 3.125em;
+}
+
+.logotxt {
+  display: block;
+  margin: 0;
+  padding: 0 80px;
+  max-width: 60em;
+}
+
+header h1 {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.5em;
+  color: #424874;
+  margin-bottom: 1.25em;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #424874;
+  margin: 0 auto;
+  max-width: 60em;
+  line-height: 1.7;
+  display: block;
+}
+
+.header-image {
+  max-width: 25em;
+  margin-top: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0.25em 1em rgba(66, 72, 116, 0.1);
+}
+
+#what-to-expect {
+  padding: 3.75em 1.25em;
+  background-color: #F4EEFF;
+  border-bottom: 0.125em solid #DDD6F3;
+}
+
+#what-to-expect .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75em;
+  margin: 0 auto;
+  gap: 3.125em;
+}
+
+#what-to-expect .text {
+  flex: 1;
+}
+
+#what-to-expect .image {
+  flex: 1;
+  width: 25em;
+  padding: 0 1.25em;
+}
+
+.team-image {
+  width: 100%;
+  border-radius: 1em;
+  box-shadow: 0 0.25em 1em rgba(66, 72, 116, 0.1);
+}
+
+#what-to-expect h2 {
+  font-size: 2.2em;
+  color: #424874;
+  margin-bottom: 1.5625em;
+  font-weight: 600;
+}
+
+#what-to-expect p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.25em;
+}
+
+#services {
+  background-color: #F4EEFF;
+  padding: 3.75em 1.25em;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2.2em;
+  color: #424874;
+  margin-bottom: 2.5em;
+  font-weight: 600;
+}
+
+.service-item {
+  background-color: #FFFFFF;
+  padding: 1.875em;
+  border-radius: 1em;
+  box-shadow: 0 0.25em 1em rgba(66, 72, 116, 0.1);
+  margin: 1.25em;
+  max-width: 21.875em;
+  display: inline-block;
+  vertical-align: top;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-0.625em);
+  box-shadow: 0 0.375em 1.25em rgba(66, 72, 116, 0.15);
+}
+
+.service-item h3 {
+  font-size: 1.5em;
+  color: #424874;
+  margin-bottom: 0.9375em;
+  font-weight: 600;
+}
+
+.service-item image {
+  width: 100%;
+  border-radius: 1em;
+  box-shadow: 0 0.25em 1em rgba(66, 72, 116, 0.1);
+}
+
+.service-item p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+#services img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+#insurance {
+  padding: 3.75em;
+  background-color: #DDD6F3;
+  text-align: center;
+}
+
+#insurance h2 {
+  font-size: 4em;
+  color: #424874;
+  font-weight: 700;
+}
+
+#insurance p {
+  font-size: 1.1em;
+  color: #424874;
+  max-width: 50em;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.admin-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4EEFF;
+  padding: 2rem;
+  border-bottom: 0.125em solid #DDD6F3;
+}
+
+.admin-button {
+  background-color: #DCCEF4;
+  color: #333;
+  border: 1px solid #DDD6F3;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-button:hover {
+  background-color: #C9B4E8;
+  border-color: #9e87c9;
+}
+
+
+@media (max-width: 48em) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  #what-to-expect .content {
+    flex-direction: column;
+  }
+
+  #what-to-expect .text,
+  #what-to-expect .image {
+    width: 100%;
+    padding: 0;
+  }
+
+  .service-item {
+    width: 100%;
+    margin: 1.25em 0;
+  }
+}
+

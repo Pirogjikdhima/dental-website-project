@@ -1,0 +1,186 @@
+#navigation {
+    min-width: 200px;
+}
+
+nav {
+    padding: 20px 0;
+    background-color: #f4eeff;
+    font-family: "Helvetica", sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+hr {
+    height: 5px;
+    background-color: #424874;
+    border: none;
+    margin: 0;
+}
+
+nav > ul {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    list-style: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: rgb(77, 0, 77);
+    font-size: 35px;
+}
+
+#log-in-item {
+    background-color: #a6b1e1;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+nav a {
+    color: #424874;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    padding: 10px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    z-index: 1000;
+    background: none;
+    border: none;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #424874;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1275px) {
+    nav {
+        padding-top: 70px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav > ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: #f4eeff;
+        height: auto;
+        padding: 10px 0;
+        margin: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        gap: 0;
+        z-index: 999;
+    }
+
+    nav > ul.active {
+        display: flex;
+    }
+
+    nav li {
+        font-size: 24px;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    nav a {
+        padding: 12px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    nav a:hover {
+        color: rgb(77, 0, 77);
+        font-size: 35px;
+        background-color: rgba(166, 177, 225, 0.3);
+    }
+
+    #log-in-item {
+        margin: 5px auto;
+        width: 90%;
+    }
+
+    #log-in-item a {
+        border-radius: 10px;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #a6b1e1;
+}
+
+.footer {
+    background-color: #a6b1e1;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+    color: #424874;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.social-icons {
+    margin: 15px 0;
+}
+
+.social-icons a {
+    font-size: 18px;
+    margin: 0 8px;
+    color: #424874;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom {
+    margin-top: 15px;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .social-icons a {
+        margin: 0 5px;
+    }
+}

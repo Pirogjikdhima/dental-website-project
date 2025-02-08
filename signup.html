@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/crystal-dental-logo.png" type="image/x-icon">
+    <title>Sign Up - Crystal Dental</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="left-section">
+        <h1 class="logo">Crystal Dental</h1>
+
+        <div class="form-box">
+            <h2>Sign Up</h2>
+            <form id="signup-form" method="POST">
+                <input type="hidden" name="action" value="register">
+                <input type="text" id="name" placeholder="First Name" name="name" required>
+                <span id="nameError" class="error"></span>
+                <input type="text" id="lastName" placeholder="Last Name" name="lastName" required>
+                <span id="lastNameError" class="error"></span>
+                <input type="email" id="email" placeholder="Email" name="email" required>
+                <span id="emailError" class="error"></span>
+                <input type="tel" id="phone" placeholder="Phone" name="phone">
+                <span id="phoneError" class="error"></span>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <span id="genderError" class="error"></span>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+                <span id="passwordError" class="error"></span>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword"
+                       required>
+                <span id="confirmPasswordError" class="error"></span>
+                <div class="newsletter-consent">
+                    <input type="checkbox" id="newsletterConsent" name="newsletterConsent">
+                    <label for="newsletterConsent">I want to receive updates via email.</label>
+                </div>
+                <button type="submit" id="signupButton">Sign Up</button>
+                <p class="switch-form">
+                    Already have an account? <a href="./signin.html">Sign in</a>
+                </p>
+            </form>
+        </div>
+
+        <div id="verificationModal" class="modal" style="display: none; visibility: hidden; opacity: 0;">
+
+            <div class="modal-content"
+                 style="background: white; padding: 2rem; border-radius: 15px; width: 90%; max-width: 400px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); text-align: center;">
+                <h2>Email Verification</h2>
+                <p>Please enter the verification code sent to your email:</p>
+                <input type="text" class="modal-input" placeholder="Verification Code"/>
+                <span class="error" style="color: red;"></span>
+                <div class="modal-actions" style="margin-top: 1rem;">
+                    <button class="modal-confirm">Verify</button>
+                    <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <img src="./images/crystal-dental-logo.png" alt="Dental Care" class="info-image">
+        <p class="info-text">Your smile is our priority. Crystal Dental provides top-notch dental care for your entire
+            family.</p>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/signup.js"></script>
+
+</body>
+</html>

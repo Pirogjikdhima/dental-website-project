@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f6f0fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    gap: 2rem;
+    background: linear-gradient(135deg, #f6f0fc, #e3daf5);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    flex: 1;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: #4a3b7c;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-box {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #4a3b7c;
+    margin-bottom: 1.5rem;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #6e58a8;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.login-options .forgot-password {
+    color: #6e58a8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-options .forgot-password:hover {
+    color: #4a3b7c;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #4a3b7c;
+    white-space: nowrap;
+}
+
+.form-checkbox input {
+    margin: 0;
+}
+
+form input.error-input {
+    border: 2px solid #d9534f;
+}
+
+.error {
+    color: #d9534f;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+form button {
+    margin-top: 1rem;
+    padding: 10px;
+    background: #6e58a8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background: #4a3b7c;
+}
+
+.divider {
+    margin: 1rem 0 0.5rem;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.switch-form {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #6e58a8;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: none;
+    border-radius: 20px;
+    box-shadow: none;
+    transition: none;
+}
+
+.info-image {
+    max-width: 65%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    box-shadow: none;
+}
+
+.info-text {
+    color: #4a3b7c;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 1rem;
+    background: none;
+}
+
+.container > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container > div:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.container > .right-section:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+#forgotPasswordModal,
+#resetPasswordModal,
+#verificationCodeModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: #4a3b7c;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+    border-color: #6e58a8;
+}
+
+.modal-content .error {
+    font-size: 0.85rem;
+    color: #d9534f;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background: #6e58a8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.modal-content button:hover {
+    background: #4a3b7c;
+}
+
+.modal-content button#closeForgotPasswordModal,
+.modal-content button#closeResetPasswordModal,
+.modal-content button#closeVerificationCodeModal {
+    background: #6e58a8;
+}
+
+.modal-content button#closeForgotPasswordModal:hover,
+.modal-content button#closeResetPasswordModal:hover,
+.modal-content button#closeVerificationCodeModal:hover {
+    background: #4a3b7c;
+}

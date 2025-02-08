@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/crystal-dental-logo.png" type="image/x-icon">
+    <title>Login - Crystal Dental</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+    <link rel="stylesheet" href="./css/signin.css">
+</head>
+    <body class="signin-page">
+
+    <div class="container">
+        <div class="left-section">
+            <h1 class="logo">Crystal Dental</h1>
+
+            <div class="form-box">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <input type="hidden" name="action" value="login">
+                    <input type="text" id="loginEmailOrPhone" placeholder="Email or Phone" required autocomplete="off"/>
+                    <span id="loginEmailPhoneError" class="error"></span>
+
+                    <input type="password" id="loginPassword" placeholder="Password" required autocomplete="off"/>
+                    <span id="loginPasswordError" class="error"></span>
+                    <span id="accountLockedError" class="error"></span>
+
+                    <div class="login-options">
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <label class="form-checkbox">
+                            <input type="checkbox" id="rememberMe">Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" id="loginButton">Login</button>
+                    <p class="switch-form">Don’t have an account? <a href="signup.html">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="right-section">
+            <img src="./images/crystal-dental-logo.png" alt="Dental Care" class="info-image"/>
+            <p class="info-text">Your smile is our priority. Crystal Dental provides top-notch dental care for your entire
+                family.</p>
+        </div>
+    </div>
+
+    <div id="forgotPasswordModal">
+        <div class="modal-content">
+            <h3>Forgot Password</h3>
+            <p>Enter your email address:</p>
+            <input type="email" id="forgotEmail" placeholder="Enter your email" required/>
+            <span id="forgotEmailError" class="error"></span>
+            <div class="button-container">
+                <button id="verifyEmailButton">Send Verification Code</button>
+                <button id="closeForgotPasswordModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="verificationCodeModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Verify Code</h3>
+            <p>Enter the verification code sent to your email:</p>
+            <input type="text" id="verificationCode" placeholder="Verification Code" required/>
+            <span id="verificationCodeError" class="error"></span>
+            <div class="button-container">
+                <button id="verifyCodeButton">Verify Code</button>
+                <button id="closeVerificationCodeModal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="resetPasswordModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Reset Password</h3>
+            <form id="resetPasswordForm" action="resetPassword" method="POST">
+                <input type="hidden" name="action" value="resetPassword"/>
+                <input type="password" id="newPassword" name="newPassword" placeholder="New Password" required
+                       autocomplete="off"/>
+                <span id="newPasswordError" class="error"></span>
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm New Password"
+                       required autocomplete="off"/>
+                <span id="confirmPasswordError" class="error"></span>
+
+                <div class="button-container">
+                    <button type="submit" id="resetPasswordButton">Reset Password</button>
+                    <button type="button" id="closeResetPasswordModal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/signin.js"></script>
+</body>
+</html>
