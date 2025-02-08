@@ -10,8 +10,9 @@ if (isset($_SESSION['user_id']) && $_SESSION['role'] == "USER") {
     header('Location: signin.html');
     exit;
 }
-
-\Stripe\Stripe::setApiKey('sk_test_51QdZaOIA6j8Agjdo5GJTLy0SpIDPNae1bPpzug7GTqcDIUlNR7CKK1ojTH9gGYRe0uEHUjbnpIDGSKukUVTONETg00wfXvfRpk');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+\Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET_KEY']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'checkout') {
     try {
